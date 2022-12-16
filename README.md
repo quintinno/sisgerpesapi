@@ -16,3 +16,7 @@
 		- SISGERP16122022104525PES
 
 			> :dart: Feature: Configurar Conexão com o Banco de Dados MySQL
+			
+		- SISGERP161220221112PES
+
+			> :dart: Feature: Implementar MF01 - Modelagem de Dados da Pessoa
