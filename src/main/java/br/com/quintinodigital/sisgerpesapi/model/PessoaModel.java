@@ -27,7 +27,7 @@ public class PessoaModel implements Serializable {
 	@JoinColumn(name = "ID_TIPO_PESSOA")
 	private TipoPessoaModel tipoPessoaModel;
 	
-	@Column(name = "NOME", nullable = false)
+	@Column(name = "NOME", unique = true, nullable = false)
 	private String nome;
 
 	public PessoaModel() { }
