@@ -17,6 +17,11 @@
 
 			> :dart: Feature: Configurar Conexão com o Banco de Dados MySQL
 			
-		- SISGERP161220221112PES
+		- SISGERP16122022111224PES
 
 			> :dart: Feature: Implementar MF01 - Modelagem de Dados da Pessoa
+
+        - SISGERP16122022134645PES
+
+  		    > :dart: Feature: Implementar MF01 - Configurar Endpoints
+            > :dizzy: Refactor: Incluir restrição de nome único da pessoa
