@@ -1,5 +1,6 @@
 package br.com.quintinodigital.sisgerpesapi.controller;
 
+import br.com.quintinodigital.sisgerpesapi.dto.PessoaResponseDTO;
 import br.com.quintinodigital.sisgerpesapi.model.PessoaModel;
 import br.com.quintinodigital.sisgerpesapi.service.PessoaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,12 +21,12 @@ public class PessoaController {
     }
 
     @GetMapping
-    public List<PessoaModel> findAll() {
+    public List<PessoaResponseDTO> findAll() {
         return this.pessoaService.findAll();
     }
 
     @GetMapping("/{codigo}")
-    public PessoaModel findOne(@PathVariable("codigo") Long codigo) {
+    public PessoaResponseDTO findOne(@PathVariable("codigo") Long codigo) {
         return this.pessoaService.findOne(codigo);
     }
 

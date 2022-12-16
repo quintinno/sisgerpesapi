@@ -26,3 +26,4 @@
   		    > :dart: Feature: Implementar MF01 - Configurar Endpoints
             > :dizzy: Refactor: Incluir restrição de nome único da pessoa
             > :dart: Feature: Implementar Tratamento de Exceções para os fluxos de Exceção
+            > :dart: Feature: Implementar Retorno de Dados Configurados (DTO)
