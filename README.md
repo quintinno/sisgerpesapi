@@ -3,7 +3,7 @@
 	+ Funcionalidades
 
 		- MF01 - Módulo Funcional 01 - Gerenciador da Pessoa
-		- MF02 - Módulo Funcional 02 - Gerenciador de Contato
+		- MF02 - Módulo Funcional 02 - Gerenciador de Contato - E-mail, Telefone e Endereço
 		- MF03 - Módulo Funcional 03 - Gerenciador de Documentos
 		- MF04 - Módulo Funcional 04 - Gerenciador de Dados Financeiros
 

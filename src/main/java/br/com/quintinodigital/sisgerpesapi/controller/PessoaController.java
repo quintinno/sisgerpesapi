@@ -2,6 +2,7 @@ package br.com.quintinodigital.sisgerpesapi.controller;
 
 import br.com.quintinodigital.sisgerpesapi.dto.PessoaResponseDTO;
 import br.com.quintinodigital.sisgerpesapi.model.PessoaModel;
+import br.com.quintinodigital.sisgerpesapi.model.TipoPessoaModel;
 import br.com.quintinodigital.sisgerpesapi.service.PessoaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -39,6 +40,11 @@ public class PessoaController {
     @DeleteMapping("/{codigo}")
     public void deleteOne(@PathVariable("codigo") Long codigo) {
         this.pessoaService.deleteOne(codigo);
+    }
+
+    @GetMapping("/tipo-pessoa")
+    public List<TipoPessoaModel> recuperarTipoPessoa() {
+        return this.pessoaService.recuperarTipoPessoa();
     }
 
 }

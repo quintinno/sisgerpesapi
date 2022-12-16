@@ -2,7 +2,9 @@ package br.com.quintinodigital.sisgerpesapi.service;
 
 import br.com.quintinodigital.sisgerpesapi.dto.PessoaResponseDTO;
 import br.com.quintinodigital.sisgerpesapi.model.PessoaModel;
+import br.com.quintinodigital.sisgerpesapi.model.TipoPessoaModel;
 import br.com.quintinodigital.sisgerpesapi.repository.PessoaRepository;
+import br.com.quintinodigital.sisgerpesapi.repository.TipoPessoaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,9 @@ public class PessoaService implements Serializable {
 
     @Autowired
     private PessoaRepository pessoaRepository;
+
+    @Autowired
+    private TipoPessoaRepository tipoPessoaRepository;
 
     public PessoaModel saveOne(PessoaModel pessoaModel) {
         return this.pessoaRepository.save(pessoaModel);
@@ -58,5 +63,8 @@ public class PessoaService implements Serializable {
         this.pessoaRepository.deleteById(codigo);
     }
 
+    public List<TipoPessoaModel> recuperarTipoPessoa() {
+        return this.tipoPessoaRepository.findAll();
+    }
 
 }
