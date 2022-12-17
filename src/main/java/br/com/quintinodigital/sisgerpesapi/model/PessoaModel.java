@@ -1,5 +1,7 @@
 package br.com.quintinodigital.sisgerpesapi.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -11,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "TB_PESSOA")
@@ -22,11 +25,13 @@ public class PessoaModel implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "CODIGO", nullable = false)
 	private Long codigo;
-	
+
+	@JsonProperty("tipo")
 	@ManyToOne
 	@JoinColumn(name = "ID_TIPO_PESSOA")
 	private TipoPessoaModel tipoPessoaModel;
-	
+
+	@NotNull(message = "O campo NOME deve ser preenchido")
 	@Column(name = "NOME", unique = true, nullable = false)
 	private String nome;
 

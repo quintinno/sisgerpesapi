@@ -40,13 +40,8 @@ public class PessoaService implements Serializable {
         return pessoaResponseDTOList;
     }
 
-    public PessoaResponseDTO findOne(Long codigo) {
-        PessoaModel pessoaModel = this.pessoaRepository.findById(codigo).get();
-        PessoaResponseDTO pessoaResponseDTO = new PessoaResponseDTO();
-            pessoaResponseDTO.setCodigo(pessoaModel.getCodigo());
-            pessoaResponseDTO.setTipoPessoa(pessoaModel.getTipoPessoaModel().getDescricao());
-            pessoaResponseDTO.setNome(pessoaModel.getNome());
-        return pessoaResponseDTO;
+    public PessoaModel findOne(Long codigo) {
+        return this.pessoaRepository.findById(codigo).get();
     }
 
     public PessoaModel updateOne(PessoaModel pessoaModel) {

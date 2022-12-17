@@ -7,17 +7,19 @@ import br.com.quintinodigital.sisgerpesapi.service.PessoaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/pessoa")
+@CrossOrigin("*")
 public class PessoaController {
 
     @Autowired
     private PessoaService pessoaService;
 
     @PostMapping
-    public PessoaModel saveOne(@RequestBody PessoaModel pessoaModel) {
+    public PessoaModel saveOne(@RequestBody @Valid PessoaModel pessoaModel) {
         return this.pessoaService.saveOne(pessoaModel);
     }
 
@@ -27,7 +29,7 @@ public class PessoaController {
     }
 
     @GetMapping("/{codigo}")
-    public PessoaResponseDTO findOne(@PathVariable("codigo") Long codigo) {
+    public PessoaModel findOne(@PathVariable("codigo") Long codigo) {
         return this.pessoaService.findOne(codigo);
     }
 
