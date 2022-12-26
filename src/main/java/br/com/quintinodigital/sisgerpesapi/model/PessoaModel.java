@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.UUID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,9 +23,9 @@ public class PessoaModel implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "CODIGO", nullable = false)
-	private Long codigo;
+	private UUID codigo;
 
 	@JsonProperty("tipo")
 	@ManyToOne
@@ -37,11 +38,11 @@ public class PessoaModel implements Serializable {
 
 	public PessoaModel() { }
 
-	public Long getCodigo() {
+	public UUID getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(Long codigo) {
+	public void setCodigo(UUID codigo) {
 		this.codigo = codigo;
 	}
 

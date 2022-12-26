@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/v1/pessoa")
@@ -29,18 +30,18 @@ public class PessoaController {
     }
 
     @GetMapping("/{codigo}")
-    public PessoaModel findOne(@PathVariable("codigo") Long codigo) {
+    public PessoaModel findOne(@PathVariable("codigo") UUID codigo) {
         return this.pessoaService.findOne(codigo);
     }
 
     @PutMapping("/{codigo}")
-    public PessoaModel updateOne(@RequestBody PessoaModel pessoaModel, @PathVariable("codigo") Long codigo) {
+    public PessoaModel updateOne(@RequestBody PessoaModel pessoaModel, @PathVariable("codigo") UUID codigo) {
         pessoaModel.setCodigo(codigo);
         return this.pessoaService.updateOne(pessoaModel);
     }
 
     @DeleteMapping("/{codigo}")
-    public void deleteOne(@PathVariable("codigo") Long codigo) {
+    public void deleteOne(@PathVariable("codigo") UUID codigo) {
         this.pessoaService.deleteOne(codigo);
     }
 

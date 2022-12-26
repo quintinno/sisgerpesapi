@@ -12,6 +12,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class PessoaService implements Serializable {
@@ -40,7 +41,7 @@ public class PessoaService implements Serializable {
         return pessoaResponseDTOList;
     }
 
-    public PessoaModel findOne(Long codigo) {
+    public PessoaModel findOne(UUID codigo) {
         return this.pessoaRepository.findById(codigo).get();
     }
 
@@ -53,7 +54,7 @@ public class PessoaService implements Serializable {
         return this.pessoaRepository.save(pessoaModel);
     }
 
-    public void deleteOne(Long codigo) {
+    public void deleteOne(UUID codigo) {
         Optional<PessoaModel> pessoaModelOptional = this.pessoaRepository.findById(codigo);
         this.pessoaRepository.deleteById(codigo);
     }

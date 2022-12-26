@@ -1,2 +1,2 @@
-insert into tb_tipo_pessoa (descricao) values ('Pessoa Física');
-insert into tb_tipo_pessoa (descricao) values ('Pessoa Jurídica');
+insert into tb_tipo_pessoa (codigo, descricao) values ('583bc251-8abb-4c00-ba05-507eb3836ee0', 'Pessoa Física');
+insert into tb_tipo_pessoa (codigo, descricao) values ('bacfb3b4-c066-4865-b39c-a47c77e4980c', 'Pessoa Jurídica');

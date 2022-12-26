@@ -1,8 +1,10 @@
 package br.com.quintinodigital.sisgerpesapi.dto;
 
+import java.util.UUID;
+
 public class PessoaResponseDTO {
 
-    private Long codigo;
+    private UUID codigo;
 
     private String tipoPessoa;
 
@@ -10,11 +12,11 @@ public class PessoaResponseDTO {
 
     public PessoaResponseDTO() { }
 
-    public Long getCodigo() {
+    public UUID getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(Long codigo) {
+    public void setCodigo(UUID codigo) {
         this.codigo = codigo;
     }
 

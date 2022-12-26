@@ -2,6 +2,7 @@ package br.com.quintinodigital.sisgerpesapi.model;
 
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.UUID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,21 +18,25 @@ public class TipoPessoaModel implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "CODIGO", nullable = false)
-	private Long codigo;
+	private UUID codigo;
 	
 	@Column(name = "DESCRICAO", nullable = false)
 	private String descricao;
 	
 	public TipoPessoaModel() { }
 
-	public Long getCodigo() {
+	public UUID getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(Long codigo) {
+	public void setCodigo(UUID codigo) {
 		this.codigo = codigo;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
 	public String getDescricao() {
